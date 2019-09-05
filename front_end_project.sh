@@ -12,7 +12,8 @@ mkdir scss
 mkdir src
 touch .gitignore
 echo .idea >> .gitignore 
-echo .vscode >> .gitignore 
+echo .vscode >> .gitignore
+echo node_modules >> .gitignore
 
 cd public 
 touch index.html
@@ -30,7 +31,7 @@ cd ..
 
 npm init -y 
 npm install node-sass webpack webpack-cli  --save-dev
-
+git init
 echo "dont forget to add  \"scss\": \"node-sass --watch main/main.scss -o css\" to you package.json file in the scripts section"
 echo "npm run scss to start watching scss folder for changes"
 }

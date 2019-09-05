@@ -2,6 +2,9 @@
 
 ##### Help full scripts to automate your day.
 
+##### You can use ruby script by running the following command
+`ruby linux.rb ` in directory
+
 #### port killer
 
 ##### Having issues with port getting stuck? use port killer
