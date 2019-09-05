@@ -1,14 +1,20 @@
 
 #!/bin/bash
 # Port killer
-
-echo "This program kills your port "
+portKiller() {
+echo "Having port trouble? Have no fear port killer is here."
 
 echo -n "Enter port Number [port]: "
 read port
-sudo lsof -iTCP -sTCP:LISTEN -P | grep :$port 
-echo -n "Enter process ID  [ID]: "
-read processID
-kill -9 $processID
-echo "port"  $port   "is now free."
 
+processID=$(sudo lsof -iTCP -sTCP:LISTEN -P | grep :$port) 
+
+echo $processID | grep -o  " [0-9]* " > process.txt
+process=$(head -n 1 process.txt)
+
+kill -9 $process
+echo "port"  $port   "is now free. give a star if you like"
+
+}
+
+portKiller
